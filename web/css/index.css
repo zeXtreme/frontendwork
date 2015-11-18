@@ -1,0 +1,192 @@
+/* global */
+.clearfix:after {
+    content: '.';
+    display: block;
+    clear: both;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+}
+
+body {
+    font-family: "Microsoft Yahei";
+}
+
+/* tips */
+.g-tips {
+    position: relative;
+    height: 36px;
+    background-color: #f3f3f3;
+    font-size: 12px;
+    color: #333;
+}
+
+.g-tips p {
+    display: inline-block;
+    margin-left: 207px;
+    margin-top: 12px;
+    margin-right: 12px;
+}
+
+.g-tips a {
+    color: #21a557;
+}
+
+.g-tips .u-close {
+    position: absolute;
+    background: url("../img/close.png") no-repeat left;
+    padding-left: 15px;
+    top: 12px;
+    right: 207px;
+}
+
+.g-tips .u-close:hover {
+    cursor: pointer;
+}
+
+/* head */
+.g-head {
+    position: relative;
+}
+
+.g-head .u-logo {
+    position: absolute;
+    top: 33px;
+    left: 207px;
+}
+
+.g-head .m-follow {
+    position: absolute;
+    top: 31px;
+    left: 472px;
+}
+
+.g-head .u-follow {
+    width: 54px;
+    height: 21px;
+    padding-left: 22px;
+    margin-left: 31px;
+    margin-right: 14px;
+    border: none;
+    background-image: url("../img/follow.jpg");
+    color: #fff;
+    font-size: 12px;
+}
+
+.g-head .u-follow:hover {
+    background-position: 0 -29px;
+}
+
+.g-head .m-nav {
+    position: absolute;
+    right: 268px;
+    top: 37px;
+    font-size: 16px;
+}
+
+.g-head .m-nav li {
+    display: inline-block;
+    margin-left: 55px;
+    color: #666666;
+}
+
+.g-head .m-nav li:hover {
+    color: #39a030;
+}
+
+.g-head .u-search {
+    position: absolute;
+    right: 219px;
+    top: 35px;
+    background-image: url("../img/search.png");
+    width: 19px;
+    height: 19px;
+}
+
+.g-head .u-search:hover {
+    cursor: pointer;
+    background-position: 0 -26px;
+}
+
+/* banner */
+.g-banner {
+    position: relative;
+    margin-top: 89px;
+}
+
+.g-banner img {
+    width: 100%;
+}
+
+.g-banner .u-pointer {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+.g-banner .u-pointer i {
+    display: inline-block;
+    margin-right: 11px;
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.g-banner .u-pointer i.curr {
+    background-color: #333;
+}
+
+/* category */
+.g-category {
+    width: 1193px;
+    margin: 61px auto 0;
+}
+
+.g-category .m-intro {
+    float: left;
+    margin-right: 84px;
+}
+
+.g-category .m-intro:last-child {
+    margin-right: 0px;
+}
+
+.g-category .m-intro div {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.g-category .m-intro h3 {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.g-category .m-intro p {
+    width: 238px;
+    line-height: 24px;
+    font-size: 14px;
+    color: #666;
+}
+
+.g-category .m-intro i {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    background-image: url("../img/icons.png");
+}
+
+.g-category .u-study i {
+    background-position: 0 -100px;
+}
+
+.g-category .u-mooc i {
+    background-position: 0 -200px;
+}
