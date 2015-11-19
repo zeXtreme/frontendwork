@@ -164,6 +164,7 @@ body {
 }
 
 .g-category .m-intro h3 {
+    font-weight: normal;
     font-size: 22px;
     color: #333;
     margin-bottom: 20px;
@@ -202,3 +203,115 @@ body {
 .g-category .m-intro a:hover {
     text-decoration: underline;
 }
+
+/* content */
+.g-content{
+    width: 100%;
+    background-color: #f8f8f8;
+}
+
+/* pic */
+.g-content .m-pics{
+    width: 1615px;
+    margin: 0 auto;
+    padding-bottom: 81px;
+}
+
+.g-content img{
+    width: 320px;
+    height: 220px;
+    margin-right: 0px;
+    vertical-align: bottom;
+}
+
+/* main */
+.g-content .m-main{
+    width: 1205px;
+    margin: 0 auto;
+}
+
+/* left */
+.g-left {
+}
+
+.g-left .m-cate{
+    width: 400px;
+    background-color: #fff;
+    box-shadow: 1px 2px #d4d3d3;
+    margin-bottom: 30px;
+}
+
+.g-left .m-cate:hover{
+    cursor: pointer;
+}
+
+.g-left .m-cate li{
+    display: block;
+    float: left;
+    width: 200px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 20px;
+    color: #666;
+    text-align: center;
+}
+
+.g-left .m-cate li.selected{
+    background-color: #39a030;
+    color: #fff;
+}
+
+.g-left .g-lesson .item{
+    width: 225px;
+    height: 228px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    box-shadow: 1px 2px #e6e6e6, -1px 0px #f1f1f1;
+}
+
+.g-left .g-lesson .item img{
+    width: 223px;
+    height: 124px;
+    margin: 0 auto;
+}
+
+.g-left .g-lesson .item h3, .g-left .g-lesson .item p, .g-left .g-lesson .item span{
+    margin: auto 5px;
+}
+
+.g-left .g-lesson .item h3{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-top: 10px;
+    color: #333;
+    font-size: 12px;
+}
+
+.g-left .g-lesson .item .author{
+    display: block;
+    margin-top: 10px;
+    font-size: 12px;
+    color: #999;
+}
+
+.g-left .g-lesson .item .person{
+    display: inline-block;
+    line-height: 16px;
+    margin-top: 10px;
+    background: url("../img/person.png") 3px 2px no-repeat;
+    border: 1px solid #ddd;
+    border-radius: 1px;
+    padding-left: 18px;
+    padding-right: 3px;
+    font-size: 8px;
+    color: #999;
+}
+
+.g-left .g-lesson .item .money{
+    display: block;
+    margin-top: 10px;
+    font-size: 12px;
+    color: #ff3f00;
+}
+
