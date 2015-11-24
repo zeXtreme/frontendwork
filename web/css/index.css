@@ -56,6 +56,7 @@ body {
 .g-header {
     position: relative;
     width: 1186px;
+    height: 89px;
     margin: 0 auto;
 }
 
@@ -71,8 +72,11 @@ body {
 }
 
 .g-header .u-follow {
+    display: inline-block;
+    box-sizing: border-box;
     width: 54px;
     height: 21px;
+    line-height: 21px;
     padding-left: 22px;
     margin-left: 31px;
     margin-right: 14px;
@@ -84,6 +88,60 @@ body {
 
 .g-header .u-follow:hover {
     background-position: 0 -29px;
+    cursor: pointer;
+}
+
+.g-header .u-follow .u-cancel {
+    display: none;
+}
+
+.g-header .u-follow.followed, .g-header .u-follow.followed.disable {
+    width: 106px;
+    background-image: url("../img/followed.png");
+    color: #333;
+}
+
+.g-header .u-follow.followed:hover, .g-header .u-follow.followed.disable:hover {
+    cursor: default;
+}
+
+.g-header .u-follow.followed {
+    background-position: 0 -29px;
+}
+
+.g-header .u-follow.followed.disable {
+    background-position: 0 0;
+}
+
+.g-header .u-follow.followed:before, .g-header .u-follow.followed.disable:before {
+    content: "已";
+}
+
+.g-header .u-follow.followed .u-line {
+    display: inline-block;
+    width: 1px;
+    height: 10px;
+    background-color: #ccc;
+    margin: 0 8px;
+}
+
+.g-header .u-follow.followed .u-cancel {
+    display: inline;
+    color: #21a557;
+    text-decoration: underline;
+}
+
+.g-header .u-follow.followed .u-cancel:hover {
+    cursor: pointer;
+}
+
+.g-header .u-follow.followed.disable .u-cancel {
+    color: #999;
+    text-decoration: none;
+}
+
+.g-header .u-follow.followed.disable .u-cancel:hover {
+    cursor: default;
 }
 
 .g-header .m-nav {
@@ -120,7 +178,6 @@ body {
 /* banner */
 .g-banner {
     position: relative;
-    margin-top: 89px;
 }
 
 .g-banner img {
@@ -221,16 +278,16 @@ body {
 
 /* pic */
 .g-content .m-pics {
-    width: 1615px;
+    width: 1620px;
     margin: 0 auto;
     padding-bottom: 81px;
 }
 
-.g-content img {
+.g-content .m-pics img {
+    float: left;
     width: 320px;
     height: 220px;
-    margin-right: 0px;
-    vertical-align: bottom;
+    margin-right: 4px;
 }
 
 /* main */
@@ -277,23 +334,28 @@ body {
     margin-bottom: -20px;
 }
 
-.g-left .m-lesson .m-item {
+.g-left .m-lesson .m-item-container {
+    position: relative;
     float: left;
     width: 225px;
     height: 228px;
     margin-bottom: 20px;
     margin-right: 20px;
+}
+
+.g-left .m-lesson .m-item {
     background-color: #fff;
     box-shadow: 0px 1px 2px #e6e6e6, 1px 1px #f1f1f1, -1px 1px #f1f1f1;
 }
 
 .g-left .m-lesson .m-item img {
+    display: block;
     width: 223px;
     height: 124px;
-    margin: 0 auto;
+    margin: 0 1px;
 }
 
-.g-left .m-lesson .m-item h3, .g-left .m-lesson .m-item p, .g-left .m-lesson .m-item span {
+.g-left .m-lesson .m-item h3, .g-left .m-lesson .m-item span {
     margin: auto 5px;
 }
 
@@ -331,6 +393,92 @@ body {
     margin-top: 10px;
     font-size: 12px;
     color: #ff3f00;
+}
+
+.g-left .m-lesson .m-item .u-desc {
+    display: none;
+}
+
+.g-left .m-lesson .m-item .u-cate {
+    display: none;
+}
+
+.g-left .m-lesson .m-item:hover { /* 借鉴 */
+    position: absolute;
+    width: 470px;
+    height: 248px;
+    z-index: 99;
+    box-shadow: 0px 1px 2px #d6d6d6, 0px -1px 2px #d6d6d6, 1px 0px 2px #cccacb, -1px 0px 2px #cccacb;
+}
+
+.g-left .m-lesson .m-item:hover img {
+    float: left;
+    margin: 16px;
+}
+
+.g-left .m-lesson .m-item:hover h3 {
+    float: left;
+    width: 197px;
+    font-size: 18px;
+    margin: 16px 0 0 0;
+}
+
+.g-left .m-lesson .m-item:hover .u-author {
+    position: absolute;
+    left: 255px;
+    top: 70px;
+    font-size: 12px;
+    color: #666;
+}
+
+.g-left .m-lesson .m-item:hover .u-author:before {
+    content: '发布者：';
+}
+
+.g-left .m-lesson .m-item:hover .u-person {
+    border: 0px;
+    position: absolute;
+    left: 255px;
+    top: 44px;
+    font-size: 12px;
+    color: #666;
+}
+
+.g-left .m-lesson .m-item:hover .u-person:after {
+    content: '人在学';
+}
+
+.g-left .m-lesson .m-item:hover .u-money {
+    display: none;
+}
+
+.g-left .m-lesson .m-item:hover .u-cate {
+    display: block;
+    position: absolute;
+    left: 255px;
+    top: 100px;
+    font-size: 12px;
+    color: #666;
+}
+
+.g-left .m-lesson .m-item:hover .u-desc {
+    box-sizing: border-box;
+    clear: both;
+    display: block;
+    width: 470px;
+    height: 92px;
+    background: #f8f8f8;
+}
+
+.g-left .m-lesson .m-item:hover .u-desc p {
+    box-sizing: border-box;
+    width: 100%;
+    height: 64px;
+    font-size: 14px;
+    color: #666;
+    overflow: hidden;
+    padding: 16px;
+    line-height: 24px;
 }
 
 .g-left .m-page {
@@ -511,6 +659,93 @@ body {
 
 .g-footer .m-linklist.u-more {
     margin-left: 73px;
+}
+
+/* dialog */
+.m-mask {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url("../img/mask.png");
+}
+
+.m-dialog {
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+.m-dialog h1 {
+    font-size: 18px;
+    color: #444;
+}
+
+.m-dialog.u-login {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -193.5px;
+    margin-top: -144px;
+    width: 387px;
+    height: 288px;
+    padding: 30px 40px;
+}
+
+.m-dialog.u-login .u-close {
+    position: absolute;
+    top: 10px;
+    right: 8px;
+    display: block;
+    width: 10px;
+    height: 10px;
+    background: url("../img/dialog_close.png") no-repeat;
+}
+
+.m-dialog.u-login form {
+    margin-top: 20px;
+}
+
+.m-dialog.u-login input {
+    display: block;
+    width: 295px;
+    height: 45px;
+    border: 1px solid #dfdfdf;
+    background-color: #fafafa;
+    box-shadow: 2px 2px #f1f1f1 inset;
+    padding-left: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+}
+
+.m-dialog.u-login button {
+    width: 295px;
+    height: 48px;
+    border: 0px;
+    background: url("../img/dialog_button.png") no-repeat;
+    font-size: 16px;
+    color: #fff;
+    margin-top: 24px;
+}
+
+.m-dialog.u-video {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -457px;
+    margin-top: -338px;
+    width: 950px;
+    height: 676px;
+    padding: 30px;
+}
+
+.m-dialog.u-video video {
+    margin-top: 22px;
 }
 
 @media screen and (max-width: 1205px) {
