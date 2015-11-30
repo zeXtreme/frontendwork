@@ -19,8 +19,8 @@
     <img class="u-logo" src="img/logo.png">
 
     <div class="m-follow">
-        <!-- class为u-follow是未关注状态，u-follow followed是已关注状态,u-follow followed disable是已关注但未启用状态 -->
-        <span class="u-follow followed">关注<span class="u-line"></span><span class="u-cancel">取消</span></span>
+        <!-- class为u-follow是未关注状态，u-follow followed是已关注状态 -->
+        <span class="u-follow">关注<span class="u-line"></span><span class="u-cancel">取消</span></span>
         <span class="u-fans">粉丝 45</span>
     </div>
     <ul class="m-nav">
@@ -37,10 +37,11 @@
     <span class="u-search"></span>
 </div>
 <div class="g-banner">
-    <img src="img/banner1.jpg">
-
+    <a class="show" href="http://open.163.com/" target="_blank"><img src="img/banner1.jpg"></a>
+    <a href="http://study.163.com/" target="_blank"><img src="img/banner2.jpg"></a>
+    <a href="http://www.icourse163.org/" target="_blank"><img src="img/banner3.jpg"></a>
     <div class="u-pointer">
-        <i class="curr"></i><i></i><i></i>
+        <i index="0" class="curr"></i><i index="1"></i><i index="2"></i>
     </div>
 </div>
 <div class="g-category clearfix">
@@ -84,250 +85,24 @@
         <img src="img/pic_5.jpg">
     </div>
     <div class="m-main clearfix">
-        <div class="g-left">
+        <div class="g-left" ng-app="lesson" ng-controller="lessonCtrl">
             <ul class="m-cate clearfix">
-                <li class="selected">产品设计</li>
-                <li>编程语言</li>
+                <li class="selected" type="10">产品设计</li>
+                <li type="20">编程语言</li>
             </ul>
             <div class="m-lesson clearfix">
-                <div class="m-item-container">
+                <div class="m-item-container template">
                     <div class="m-item clearfix">
-                        <img src="img/1.jpg">
+                        <img>
 
-                        <h3>1混音全揭秘混音全揭秘混音全揭秘混音全揭秘混音全揭秘混音全揭秘</h3>
-                        <span class="u-author">音频帮</span>
-                        <span class="u-person">510</span>
-                        <span class="u-money">￥800.00</span>
-                        <span class="u-cate">分类：音频</span>
+                        <h3></h3>
+                        <span class="u-author"></span>
+                        <span class="u-person"></span>
+                        <span class="u-money"></span>
+                        <span class="u-cate"></span>
 
                         <div class="u-desc">
-                            <p>
-                                生活中不乏有很多美好的画面生活中不乏有很多美好的画面生活中不乏有很多美好的画面生活中不乏有很多美好的画面生活中不乏有很多美好的画面生活中不乏有很多美好的画面生活中不乏有很多美好的画面生活中不乏有很多美好的画面</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="m-item-container">
-                    <div class="m-item clearfix">
-                        <img src="img/1.jpg">
-
-                        <h3>1混音全揭秘混音全揭秘混音全揭秘混音全揭秘混音全揭秘混音全揭秘</h3>
-                        <span class="u-author">音频帮</span>
-                        <span class="u-person">510</span>
-                        <span class="u-money">￥800.00</span>
-                        <span class="u-cate">分类：音频</span>
-
-                        <div class="u-desc">
-                            <p>生活中不乏有很多美好的画面生活中不乏有很多美好的画面生活中不乏有很多美好的画面</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="m-item-container">
-                    <div class="m-item clearfix">
-                        <img src="img/1.jpg">
-
-                        <h3>1混音全揭秘混音全揭秘混音全揭秘混音全揭秘混音全揭秘混音全揭秘</h3>
-                        <span class="u-author">音频帮</span>
-                        <span class="u-person">510</span>
-                        <span class="u-money">￥800.00</span>
-                        <span class="u-cate">分类：音频</span>
-
-                        <div class="u-desc">
-                            <p>生活中不乏有很多美好的画面生活中不乏有很多美好的画面生活中不乏有很多美好的画面</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="m-item-container">
-                    <div class="m-item clearfix">
-                        <img src="img/1.jpg">
-
-                        <h3>1混音全揭秘混音全揭秘混音全揭秘混音全揭秘混音全揭秘混音全揭秘</h3>
-                        <span class="u-author">音频帮</span>
-                        <span class="u-person">510</span>
-                        <span class="u-money">￥800.00</span>
-                        <span class="u-cate">分类：音频</span>
-
-                        <div class="u-desc">
-                            <p>生活中不乏有很多美好的画面生活中不乏有很多美好的画面生活中不乏有很多美好的画面</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="m-item-container">
-                    <div class="m-item clearfix">
-                        <img src="img/1.jpg">
-
-                        <h3>1混音全揭秘混音全揭秘混音全揭秘混音全揭秘混音全揭秘混音全揭秘</h3>
-                        <span class="u-author">音频帮</span>
-                        <span class="u-person">510</span>
-                        <span class="u-money">￥800.00</span>
-                        <span class="u-cate">分类：音频</span>
-
-                        <div class="u-desc">
-                            <p>生活中不乏有很多美好的画面生活中不乏有很多美好的画面生活中不乏有很多美好的画面</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="m-item-container">
-                    <div class="m-item clearfix">
-                        <img src="img/1.jpg">
-
-                        <h3>1混音全揭秘混音全揭秘混音全揭秘混音全揭秘混音全揭秘混音全揭秘</h3>
-                        <span class="u-author">音频帮</span>
-                        <span class="u-person">510</span>
-                        <span class="u-money">￥800.00</span>
-                        <span class="u-cate">分类：音频</span>
-
-                        <div class="u-desc">
-                            <p>生活中不乏有很多美好的画面生活中不乏有很多美好的画面生活中不乏有很多美好的画面</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="m-item-container">
-                    <div class="m-item clearfix">
-                        <img src="img/1.jpg">
-
-                        <h3>1混音全揭秘混音全揭秘混音全揭秘混音全揭秘混音全揭秘混音全揭秘</h3>
-                        <span class="u-author">音频帮</span>
-                        <span class="u-person">510</span>
-                        <span class="u-money">￥800.00</span>
-                        <span class="u-cate">分类：音频</span>
-
-                        <div class="u-desc">
-                            <p>生活中不乏有很多美好的画面生活中不乏有很多美好的画面生活中不乏有很多美好的画面</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="m-item-container">
-                    <div class="m-item clearfix">
-                        <img src="img/1.jpg">
-
-                        <h3>1混音全揭秘混音全揭秘混音全揭秘混音全揭秘混音全揭秘混音全揭秘</h3>
-                        <span class="u-author">音频帮</span>
-                        <span class="u-person">510</span>
-                        <span class="u-money">￥800.00</span>
-                        <span class="u-cate">分类：音频</span>
-
-                        <div class="u-desc">
-                            <p>生活中不乏有很多美好的画面生活中不乏有很多美好的画面生活中不乏有很多美好的画面</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="m-item-container">
-                    <div class="m-item clearfix">
-                        <img src="img/1.jpg">
-
-                        <h3>1混音全揭秘混音全揭秘混音全揭秘混音全揭秘混音全揭秘混音全揭秘</h3>
-                        <span class="u-author">音频帮</span>
-                        <span class="u-person">510</span>
-                        <span class="u-money">￥800.00</span>
-                        <span class="u-cate">分类：音频</span>
-
-                        <div class="u-desc">
-                            <p>生活中不乏有很多美好的画面生活中不乏有很多美好的画面生活中不乏有很多美好的画面</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="m-item-container">
-                    <div class="m-item clearfix">
-                        <img src="img/1.jpg">
-
-                        <h3>1混音全揭秘混音全揭秘混音全揭秘混音全揭秘混音全揭秘混音全揭秘</h3>
-                        <span class="u-author">音频帮</span>
-                        <span class="u-person">510</span>
-                        <span class="u-money">￥800.00</span>
-                        <span class="u-cate">分类：音频</span>
-
-                        <div class="u-desc">
-                            <p>生活中不乏有很多美好的画面生活中不乏有很多美好的画面生活中不乏有很多美好的画面</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="m-item-container">
-                    <div class="m-item clearfix">
-                        <img src="img/1.jpg">
-
-                        <h3>1混音全揭秘混音全揭秘混音全揭秘混音全揭秘混音全揭秘混音全揭秘</h3>
-                        <span class="u-author">音频帮</span>
-                        <span class="u-person">510</span>
-                        <span class="u-money">￥800.00</span>
-                        <span class="u-cate">分类：音频</span>
-
-                        <div class="u-desc">
-                            <p>生活中不乏有很多美好的画面生活中不乏有很多美好的画面生活中不乏有很多美好的画面</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="m-item-container">
-                    <div class="m-item clearfix">
-                        <img src="img/1.jpg">
-
-                        <h3>1混音全揭秘混音全揭秘混音全揭秘混音全揭秘混音全揭秘混音全揭秘</h3>
-                        <span class="u-author">音频帮</span>
-                        <span class="u-person">510</span>
-                        <span class="u-money">￥800.00</span>
-                        <span class="u-cate">分类：音频</span>
-
-                        <div class="u-desc">
-                            <p>生活中不乏有很多美好的画面生活中不乏有很多美好的画面生活中不乏有很多美好的画面</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="m-item-container">
-                    <div class="m-item clearfix">
-                        <img src="img/1.jpg">
-
-                        <h3>1混音全揭秘混音全揭秘混音全揭秘混音全揭秘混音全揭秘混音全揭秘</h3>
-                        <span class="u-author">音频帮</span>
-                        <span class="u-person">510</span>
-                        <span class="u-money">￥800.00</span>
-                        <span class="u-cate">分类：音频</span>
-
-                        <div class="u-desc">
-                            <p>生活中不乏有很多美好的画面生活中不乏有很多美好的画面生活中不乏有很多美好的画面</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="m-item-container">
-                    <div class="m-item clearfix">
-                        <img src="img/1.jpg">
-
-                        <h3>1混音全揭秘混音全揭秘混音全揭秘混音全揭秘混音全揭秘混音全揭秘</h3>
-                        <span class="u-author">音频帮</span>
-                        <span class="u-person">510</span>
-                        <span class="u-money">￥800.00</span>
-                        <span class="u-cate">分类：音频</span>
-
-                        <div class="u-desc">
-                            <p>生活中不乏有很多美好的画面生活中不乏有很多美好的画面生活中不乏有很多美好的画面</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="m-item-container">
-                    <div class="m-item clearfix">
-                        <img src="img/1.jpg">
-
-                        <h3>1混音全揭秘混音全揭秘混音全揭秘混音全揭秘混音全揭秘混音全揭秘</h3>
-                        <span class="u-author">音频帮</span>
-                        <span class="u-person">510</span>
-                        <span class="u-money">￥800.00</span>
-                        <span class="u-cate">分类：音频</span>
-
-                        <div class="u-desc">
-                            <p>生活中不乏有很多美好的画面生活中不乏有很多美好的画面生活中不乏有很多美好的画面</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="m-item-container">
-                    <div class="m-item clearfix">
-                        <img src="img/1.jpg">
-
-                        <h3>1混音全揭秘混音全揭秘混音全揭秘混音全揭秘混音全揭秘混音全揭秘</h3>
-                        <span class="u-author">音频帮</span>
-                        <span class="u-person">510</span>
-                        <span class="u-money">￥800.00</span>
-                        <span class="u-cate">分类：音频</span>
-
-                        <div class="u-desc">
-                            <p>生活中不乏有很多美好的画面生活中不乏有很多美好的画面生活中不乏有很多美好的画面</p>
+                            <p></p>
                         </div>
                     </div>
                 </div>
@@ -335,24 +110,6 @@
             <div class="m-page">
                 <i class="u-prev"></i>
                 <ul class="clearfix">
-                    <a>
-                        <li class="selected">1</li>
-                    </a>
-                    <a>
-                        <li>2</li>
-                    </a>
-                    <a>
-                        <li>3</li>
-                    </a>
-                    <a>
-                        <li>4</li>
-                    </a>
-                    <a>
-                        <li>5</li>
-                    </a>
-                    <a>
-                        <li>6</li>
-                    </a>
                 </ul>
                 <i class="u-next"></i>
             </div>
@@ -377,84 +134,12 @@
 
                 <div class="u-bottom">
                     <ul class="m-ranklist">
-                        <li class="clearfix">
-                            <img src="img/icon_1.jpg">
+                        <li class="clearfix template">
+                            <img>
 
                             <div>
-                                <h3>舞曲解密舞曲解密舞曲解密舞曲解密舞曲解密舞曲解密</h3>
-                                <span>21567</span>
-                            </div>
-                        </li>
-                        <li class="clearfix">
-                            <img src="img/icon_1.jpg">
-
-                            <div>
-                                <h3>舞曲解密舞曲解密舞曲解密舞曲解密舞曲解密舞曲解密</h3>
-                                <span>21567</span>
-                            </div>
-                        </li>
-                        <li class="clearfix">
-                            <img src="img/icon_1.jpg">
-
-                            <div>
-                                <h3>舞曲解密舞曲解密舞曲解密舞曲解密舞曲解密舞曲解密</h3>
-                                <span>21567</span>
-                            </div>
-                        </li>
-                        <li class="clearfix">
-                            <img src="img/icon_1.jpg">
-
-                            <div>
-                                <h3>舞曲解密舞曲解密舞曲解密舞曲解密舞曲解密舞曲解密</h3>
-                                <span>21567</span>
-                            </div>
-                        </li>
-                        <li class="clearfix">
-                            <img src="img/icon_1.jpg">
-
-                            <div>
-                                <h3>舞曲解密舞曲解密舞曲解密舞曲解密舞曲解密舞曲解密</h3>
-                                <span>21567</span>
-                            </div>
-                        </li>
-                        <li class="clearfix">
-                            <img src="img/icon_1.jpg">
-
-                            <div>
-                                <h3>舞曲解密舞曲解密舞曲解密舞曲解密舞曲解密舞曲解密</h3>
-                                <span>21567</span>
-                            </div>
-                        </li>
-                        <li class="clearfix">
-                            <img src="img/icon_1.jpg">
-
-                            <div>
-                                <h3>舞曲解密舞曲解密舞曲解密舞曲解密舞曲解密舞曲解密</h3>
-                                <span>21567</span>
-                            </div>
-                        </li>
-                        <li class="clearfix">
-                            <img src="img/icon_1.jpg">
-
-                            <div>
-                                <h3>舞曲解密舞曲解密舞曲解密舞曲解密舞曲解密舞曲解密</h3>
-                                <span>21567</span>
-                            </div>
-                        </li>
-                        <li class="clearfix">
-                            <img src="img/icon_1.jpg">
-
-                            <div>
-                                <h3>舞曲解密舞曲解密舞曲解密舞曲解密舞曲解密舞曲解密</h3>
-                                <span>21567</span>
-                            </div>
-                        </li>
-                        <li class="clearfix">
-                            <img src="img/icon_1.jpg">
-
-                            <div>
-                                <h3>舞曲解密舞曲解密舞曲解密舞曲解密舞曲解密舞曲解密</h3>
-                                <span>21567</span>
+                                <h3></h3>
+                                <span></span>
                             </div>
                         </li>
                     </ul>
@@ -522,9 +207,13 @@
         </form>
     </div>
     <div class="m-dialog u-video">
+        <a><i class="u-close"></i></a>
         <h1>请观看下面的视频</h1>
-        <video controls width="889px" src="http://mov.bn.netease.com/open-movie/nos/mp4/2014/12/30/SADQ86F5S_shd.mp4"/>
+        <video controls width="889px" src="http://mov.bn.netease.com/open-movie/nos/mp4/2014/12/30/SADQ86F5S_shd.mp4">您的浏览器不支持Video标签</video>
     </div>
 </div>
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/jquery.md5.js"></script>
+<script src="js/index.js"></script>
 </body>
 </html>

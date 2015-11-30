@@ -16,6 +16,10 @@ body {
     font-family: "Microsoft Yahei";
 }
 
+.template {
+    display: none !important;
+}
+
 /* tips */
 .g-tips {
     height: 36px;
@@ -95,25 +99,21 @@ body {
     display: none;
 }
 
-.g-header .u-follow.followed, .g-header .u-follow.followed.disable {
+.g-header .u-follow.followed, .g-header .u-follow.followed.disabled {
     width: 106px;
     background-image: url("../img/followed.png");
     color: #333;
 }
 
-.g-header .u-follow.followed:hover, .g-header .u-follow.followed.disable:hover {
+.g-header .u-follow.followed:hover, .g-header .u-follow.followed.disabled:hover {
     cursor: default;
 }
 
-.g-header .u-follow.followed {
+.g-header .u-follow.followed:hover {
     background-position: 0 -29px;
 }
 
-.g-header .u-follow.followed.disable {
-    background-position: 0 0;
-}
-
-.g-header .u-follow.followed:before, .g-header .u-follow.followed.disable:before {
+.g-header .u-follow.followed:before {
     content: "已";
 }
 
@@ -127,21 +127,13 @@ body {
 
 .g-header .u-follow.followed .u-cancel {
     display: inline;
-    color: #21a557;
-    text-decoration: underline;
+    color: #999;
 }
 
 .g-header .u-follow.followed .u-cancel:hover {
+    color: #21a557;
     cursor: pointer;
-}
-
-.g-header .u-follow.followed.disable .u-cancel {
-    color: #999;
-    text-decoration: none;
-}
-
-.g-header .u-follow.followed.disable .u-cancel:hover {
-    cursor: default;
+    text-decoration: underline;
 }
 
 .g-header .m-nav {
@@ -182,6 +174,14 @@ body {
 
 .g-banner img {
     width: 100%;
+}
+
+.g-banner a {
+    display: none;
+}
+
+.g-banner .show {
+    display: block;
 }
 
 .g-banner .u-pointer {
@@ -279,8 +279,7 @@ body {
 /* pic */
 .g-content .m-pics {
     width: 1620px;
-    margin: 0 auto;
-    padding-bottom: 81px;
+    margin: 0 auto 81px;
 }
 
 .g-content .m-pics img {
@@ -432,7 +431,7 @@ body {
 }
 
 .g-left .m-lesson .m-item:hover .u-author:before {
-    content: '发布者：';
+    content: "发布者：";
 }
 
 .g-left .m-lesson .m-item:hover .u-person {
@@ -445,7 +444,7 @@ body {
 }
 
 .g-left .m-lesson .m-item:hover .u-person:after {
-    content: '人在学';
+    content: "人在学";
 }
 
 .g-left .m-lesson .m-item:hover .u-money {
@@ -459,6 +458,10 @@ body {
     top: 100px;
     font-size: 12px;
     color: #666;
+}
+
+.g-left .m-lesson .m-item:hover .u-cate:before {
+    content: '分类：';
 }
 
 .g-left .m-lesson .m-item:hover .u-desc {
@@ -505,6 +508,7 @@ body {
 }
 
 .g-left .m-page ul li:hover, .g-left .m-page ul li.selected {
+    cursor: pointer;
     background-color: #9dd8b1;
     color: #fff;
 }
@@ -523,6 +527,14 @@ body {
     height: 20px;
     background: #9dd8b1 url("../img/next.png") no-repeat center;
     margin-left: 5px;
+}
+
+.g-left .m-page .u-prev:hover, .g-left .m-page .u-next:hover {
+    cursor: pointer;
+}
+
+.g-left .m-page .u-prev .disbale:hover, .g-left .m-page .u-next .disabled:hover {
+    cursor: default;
 }
 
 /* right */
@@ -571,13 +583,14 @@ body {
     background-color: #eee;
 }
 
+.g-right .u-rank .u-bottom {
+    height: 680px;
+    overflow: hidden;
+}
+
 .g-right .u-rank .m-ranklist li {
     display: block;
     margin-bottom: 20px;
-}
-
-.g-right .u-rank .m-ranklist li:last-child {
-    margin-bottom: 0px;
 }
 
 .g-right .u-rank .m-ranklist li img {
@@ -608,6 +621,7 @@ body {
     height: 262px;
     background-color: #2c3339;
     color: rgba(255, 255, 255, 0.6);
+    color: #a2a4a5 \0/; /* IE8 HACK */
 }
 
 .g-footer > div {
@@ -720,6 +734,11 @@ body {
     font-size: 16px;
     box-sizing: border-box;
     margin-bottom: 15px;
+    line-height: 45px;
+}
+
+.m-dialog.u-login input.novalidate {
+    border-color: red;
 }
 
 .m-dialog.u-login button {
@@ -742,6 +761,16 @@ body {
     width: 950px;
     height: 676px;
     padding: 30px;
+}
+
+.m-dialog.u-video .u-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    display: block;
+    width: 10px;
+    height: 10px;
+    background: url("../img/dialog_close.png") no-repeat;
 }
 
 .m-dialog.u-video video {
