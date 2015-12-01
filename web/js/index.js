@@ -182,7 +182,7 @@ $('.g-banner .u-pointer').click(function (event) {
 
 //提示条模块
 $('.g-tips .u-close').click(function () {
-    setCookie('no_alert', '1', new Date(9999, 12, 31).toUTCString());
+    setCookie('no_alert', '1', new Date(9999, 11, 31).toUTCString());
     //document.cookie = "no_alert=1;expires=" + new Date(9999,12,31).toUTCString();
     $('.g-tips').hide();
 });
@@ -198,7 +198,7 @@ if (getCookie('no_alert') == '1') {
  * @param expires
  */
 function setCookie(name, value, expires) {
-    document.cookie = name + '=' + value + (expires ? 'expires=' + expires : '');
+    document.cookie = name + '=' + value + (expires ? ';expires=' + expires : '');
 }
 
 /**
@@ -244,7 +244,7 @@ if (getCookie('followSuc') == '1') {
                 if (xhr.readyState == 4) {
                     if (xhr.status == 200) {
                         if (xhr.responseText == '1') {
-                            setCookie('followSuc', '1');
+                            setCookie('followSuc', '1', new Date(9999, 11, 31).toUTCString());
                             $('.g-header .u-follow').addClass('followed');
                         }
                     }
@@ -255,7 +255,7 @@ if (getCookie('followSuc') == '1') {
             $('.m-dialog.u-login form').children('input').each(function () {
                 $(this).val('');
                 $(this).blur(function (event) {
-                    if (/^[a-zA-Z][a-zA-Z0-9_]{4,15}$/.test($(event.currentTarget).val())) {
+                    if (/^[a-zA-Z][a-zA-Z0-9_\.]{4,15}$/.test($(event.currentTarget).val())) {
                         $(event.currentTarget).removeClass('novalidate');
                         validate = true;
                     } else {
