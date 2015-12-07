@@ -232,66 +232,80 @@ $('.m-dialog .u-close').click(function () {
 });
 
 //关注模块
-if (getCookie('followSuc') == '1') {
-    $('.g-header .u-follow').addClass('followed');
-} else {
-    $('.g-header .u-follow').click(function () {
-        if (getCookie('loginSuc') == '1') {
-            var xhr = new XMLHttpRequest();
-            xhr.open('get', 'http://study.163.com/webDev/attention.htm', true);
-            xhr.send();
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState == 4) {
-                    if (xhr.status == 200) {
-                        if (xhr.responseText == '1') {
-                            setCookie('followSuc', '1', new Date(9999, 11, 31).toUTCString());
-                            $('.g-header .u-follow').addClass('followed');
-                        }
+function follow() {
+    if (getCookie('loginSuc') == '1') {
+        var xhr = new XMLHttpRequest();
+        xhr.open('get', 'http://study.163.com/webDev/attention.htm', true);
+        xhr.send();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4) {
+                if (xhr.status == 200) {
+                    if (xhr.responseText == '1') {
+                        $('.g-header .u-follow').off('click');
+                        setCookie('followSuc', '1', new Date(9999, 11, 31).toUTCString());
+                        $('.g-header .u-follow').addClass('followed');
+                        $('.g-header .u-follow .u-cancel').click(unfollow);
                     }
                 }
             }
-        } else {
-            var validate = false;
-            $('.m-dialog.u-login form').children('input').each(function () {
-                $(this).val('');
-                $(this).blur(function (event) {
-                    if (/^[a-zA-Z][a-zA-Z0-9_\.]{4,15}$/.test($(event.currentTarget).val())) {
-                        $(event.currentTarget).removeClass('novalidate');
-                        validate = true;
-                    } else {
-                        $(event.currentTarget).addClass('novalidate');
-                        validate = false;
-                    }
-                });
+        }
+    } else {
+        var validate = false;
+        $('.m-dialog.u-login form').children('input').each(function () {
+            $(this).val('');
+            $(this).blur(function (event) {
+                if (/^[a-zA-Z][a-zA-Z0-9_\.]{4,15}$/.test($(event.currentTarget).val())) {
+                    $(event.currentTarget).removeClass('novalidate');
+                    validate = true;
+                } else {
+                    $(event.currentTarget).addClass('novalidate');
+                    validate = false;
+                }
             });
-            $('.m-dialog.u-login form').submit(function (event) {
-                event.preventDefault();
-                if (validate) {
-                    var userName = $(event.currentTarget['userName']).val();
-                    var password = $(event.currentTarget['password']).val();
-                    var xhr = new XMLHttpRequest();
-                    xhr.open('get', 'http://study.163.com/webDev/login.htm?userName=' + $.md5(userName) + '&password=' + $.md5(password), true);
-                    xhr.send();
-                    xhr.onreadystatechange = function () {
-                        if (xhr.readyState == 4) {
-                            if (xhr.status == 200) {
-                                if (xhr.responseText == '1') {
-                                    setCookie('loginSuc', '1');
-                                    $('.m-mask').hide();
-                                    $('.m-dialog.u-login').hide();
-                                } else {
-                                    alert('用户名密码不匹配！');
-                                }
+        });
+        $('.m-dialog.u-login form').submit(function (event) {
+            event.preventDefault();
+            if (validate) {
+                var userName = $(event.currentTarget['userName']).val();
+                var password = $(event.currentTarget['password']).val();
+                var xhr = new XMLHttpRequest();
+                xhr.open('get', 'http://study.163.com/webDev/login.htm?userName=' + $.md5(userName) + '&password=' + $.md5(password), true);
+                xhr.send();
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState == 4) {
+                        if (xhr.status == 200) {
+                            if (xhr.responseText == '1') {
+                                setCookie('loginSuc', '1');
+                                $('.m-mask').hide();
+                                $('.m-dialog.u-login').hide();
+                            } else {
+                                alert('用户名密码不匹配！');
                             }
                         }
                     }
                 }
-            });
-            $('.m-mask').show();
-            $('.m-dialog.u-login').show();
-        }
-    });
+            }
+        });
+        $('.m-mask').show();
+        $('.m-dialog.u-login').show();
+    }
 }
+
+function unfollow(event){
+    $('.g-header .u-follow .u-cancel').off('click');
+    setCookie('followSuc', '0');
+    $('.g-header .u-follow').removeClass('followed');
+    $('.g-header .u-follow').click(follow);
+    event.stopPropagation();
+}
+
+if (getCookie('followSuc') == '1') {
+    $('.g-header .u-follow').addClass('followed');
+    $('.g-header .u-follow .u-cancel').click(unfollow);
+}else {
+    $('.g-header .u-follow').click(follow);
+}
+
 
 //最热排行模块
 function setRankListData() {
